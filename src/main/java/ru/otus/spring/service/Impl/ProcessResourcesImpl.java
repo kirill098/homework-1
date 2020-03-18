@@ -11,12 +11,13 @@ import java.util.Scanner;
 
 public class ProcessResourcesImpl implements ProcessResources {
 
-    private String path;
+    private final String path;
 
     public ProcessResourcesImpl(String path) {
         this.path = path;
     }
 
+    @Override
     public List<Question> readQuestions() throws Exception {
         List<Question> questions = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(path))) {
