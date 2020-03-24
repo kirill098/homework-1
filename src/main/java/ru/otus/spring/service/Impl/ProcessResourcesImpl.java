@@ -1,5 +1,7 @@
 package ru.otus.spring.service.Impl;
 
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import ru.otus.spring.model.Question;
 import ru.otus.spring.service.ProcessResources;
@@ -7,14 +9,16 @@ import ru.otus.spring.service.ProcessResources;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
+@Service
 public class ProcessResourcesImpl implements ProcessResources {
 
     private final String path;
 
-    public ProcessResourcesImpl(String path) {
-        this.path = path;
+    public ProcessResourcesImpl(MessageSource messageSource, Locale locale) {
+        this.path = messageSource.getMessage("file.path", null, locale);
     }
 
     @Override

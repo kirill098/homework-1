@@ -1,19 +1,21 @@
 package ru.otus.spring.service.Impl;
 
+import org.springframework.stereotype.Service;
 import ru.otus.spring.model.Answer;
 import ru.otus.spring.model.Question;
 import ru.otus.spring.service.OutputInformationService;
 
 import java.util.Map;
 
+@Service
 public class OutputInformationServiceImpl implements OutputInformationService {
 
     @Override
     public void printTestResult(Map<Question, Answer> map) {
         map.entrySet().forEach(r ->
                 System.out.println(
-                        "Вопрос: " + r.getKey().getDescription() + ". " +
-                        "Ответ: " + r.getValue().getDescription())
+                        r.getKey().getDescription() + ": " +
+                        r.getValue().getDescription())
         );
     }
 

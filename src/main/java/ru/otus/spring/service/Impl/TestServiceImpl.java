@@ -1,5 +1,6 @@
 package ru.otus.spring.service.Impl;
 
+import org.springframework.stereotype.Service;
 import ru.otus.spring.model.Answer;
 import ru.otus.spring.model.Question;
 import ru.otus.spring.service.InputInformationService;
@@ -12,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class TestServiceImpl implements TestService {
 
     private final OutputInformationService outputInformationService;
