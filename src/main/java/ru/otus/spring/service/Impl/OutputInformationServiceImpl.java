@@ -14,7 +14,7 @@ public class OutputInformationServiceImpl implements OutputInformationService {
     public void printTestResult(Map<Question, Answer> map) {
         map.entrySet().forEach(r ->
                 System.out.println(
-                        r.getKey().getDescription() + ": " +
+                        r.getKey().getDescription() + " " +
                         r.getValue().getDescription())
         );
     }
@@ -24,5 +24,8 @@ public class OutputInformationServiceImpl implements OutputInformationService {
         System.out.println(question.getDescription());
     }
 
-
+    @Override
+    public void printText(String text) {
+        System.out.println(text);
+    }
 }

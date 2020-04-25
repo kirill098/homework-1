@@ -10,4 +10,6 @@ public interface OutputInformationService {
     void printTestResult(Map<Question, Answer> map);
 
     void printQuestion(Question question);
+
+    void printText(String text);
 }
